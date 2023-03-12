@@ -24,10 +24,12 @@ Route::middleware('auth:sanctum')->group(function () {
 
   Route::post('/logout', [AuthController::class, 'logout']);
   Route::apiResource('/users', UserController::class);
+
+  Route::get('/cart', [CartController::class, 'cartList']);
+  Route::post('/cart', [CartController::class, 'addToCart']);
+  Route::put('/cart', [CartController::class, 'updateCart']);
+  Route::delete('/cart', [CartController::class, 'deleteCart']);
 });
 
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login']);
-
-Route::get('/cart', [CartController::class, 'cartList']);
-Route::post('/cart', [CartController::class, 'addToCart']);
