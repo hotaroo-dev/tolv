@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::post('/logout', [AuthController::class, 'logout']);
   Route::apiResource('/users', UserController::class);
 
+  Route::get('/carts', [CartController::class, 'entireCartTable']);
   Route::get('/cart', [CartController::class, 'cartList']);
   Route::post('/cart', [CartController::class, 'addToCart']);
   Route::put('/cart', [CartController::class, 'updateCart']);
