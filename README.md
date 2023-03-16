@@ -1,66 +1,134 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img width="80" src="./public/tolv.svg" alt="Tolv Logo" />
 </p>
 
-## About Laravel
+## Requirements
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+For development, you need to have these installed in your environement.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- `PHP` is an open-source server-side scripting language.
+- `Composer` is a tool for dependency management in PHP.
+- `Node.js` is an open-source and cross-platform Javascript runtime env.
+- `Yarn` is a package manager for Node.js.
+- `MySQL` is an open-source relational database.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### PHP / Composer
 
-## Learning Laravel
+First you need to have [Scoop](https://scoop.sh/) (A command-line installer for Windows) installed in your pc.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Install PHP and Composer via Scoop
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+      scoop install php composer
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- If the installation was successful, you should be able to run the following command.
 
-## Laravel Sponsors
+      php --version
+      PHP 8.2.4 (cli) ...
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+      compoesr --version
+      Composer version 2.5.4 ...
 
-### Premium Partners
+### Node
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+If you have node installed, you should be able to run the following command.
 
-## Contributing
+    node --version
+    v16.16.0
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    npm --version
+    8.18.0
 
-## Code of Conduct
+### Yarn installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+After installing node, this project will need yarn too, so just run the following command.
 
-## Security Vulnerabilities
+    npm install -g yarn
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## Configure File `php.ini`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Run following command to find php.ini path
+
+    php --ini
+
+After that open php.ini with your favorite code editor and uncomment the following lines:
+
+    extension=openssl # to enable OpenSSL
+    extension=pdo_mysql # to enable MySQL server
+
+And reload web-server / terminal
+
+---
+
+## Install
+
+     git clone --recursive https://github.com/hotaroo-dev/tolv.git
+
+There are 2 steps you need to do to get it setup to start working on your system.
+
+- **Step 1** `Laravel` backend
+
+  1.  cd into laravel project
+
+      ```
+      cd tolv
+      ```
+
+  2.  Install Composer Dependencies
+
+      ```
+      composer install --ignore-platform-reqs
+      ```
+
+  3.  Create a a copy of your .env file
+
+      ```
+      cp .env-example .env
+      ```
+
+  4.  Migrate the database
+
+      start MySQL server frist (MySQL standalone or via XAMPP) before you run command below
+
+      ```
+      php artisan migrate
+      ```
+
+  5.  Running app on the PHP dev server
+
+      ```
+      php artisan serve
+      ```
+
+- **step 2** `React` frontend
+
+  open another terminal window
+
+  1. cd into react project
+
+     ```
+     cd react
+     ```
+
+  1. Install Dependencies
+
+     ```
+     yarn
+     ```
+
+  1. Change admin name (based on email name) in .env file:
+
+     ```
+     VITE_ADMIN=hiro # hori@example.com
+     ```
+
+  1. Starts the dev server
+
+     ```
+     yarn dev
+     ```
+
+I Think Everyone Deserves A Nap ㅜㅜ
+
+---
