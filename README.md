@@ -1,3 +1,5 @@
+<br />
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./public/tolv-dark.svg" />
@@ -7,6 +9,11 @@
 </p>
 
 <br />
+
+<p align="center">
+  <img src="https://img.shields.io/badge/laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"/>
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+</p>
 
 ## Requirements
 
