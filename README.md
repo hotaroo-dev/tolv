@@ -133,7 +133,7 @@ There are 2 steps you need to do to get it setup to start working on your system
   1. Change admin name (based on email name) in .env file:
 
      ```
-     VITE_ADMIN=hiro # hori@example.com
+     VITE_ADMIN=hiro # hiro@example.com
      ```
 
   1. Starts the dev server
