@@ -1,6 +1,12 @@
 <p align="center">
-  <img width="80" src="./public/tolv.svg" alt="Tolv Logo" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./public/tolv-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./public/tolv.svg" />
+    <img width="120" src="./public/tolv-dark.svg" alt="tolv logo" />
+  </picture>
 </p>
+
+<br />
 
 ## Requirements
 
