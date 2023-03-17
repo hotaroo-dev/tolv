@@ -97,7 +97,7 @@ There are 2 steps you need to do to get it setup to start working on your system
   3.  Create a a copy of your .env file
 
       ```
-      cp .env-example .env
+      cp .env.example .env
       ```
 
   4.  Migrate the database
