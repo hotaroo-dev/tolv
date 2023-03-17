@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CartResource;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,17 +12,16 @@ class CartController extends Controller
 {
   public function entireCartTable()
   {
-    $cartList = Cart::all();
-
-    return response(compact('cartList'));
+    return CartResource::collection(Cart::all());
   }
 
-  public function cartList(Request $request)
+  public function cartList()
   {
     $user_id = Auth::user()->id;
-    $carts = Cart::where('user_id', $user_id)->get();
 
-    return response(compact('carts'));
+    return CartResource::collection(
+      Cart::where('user_id', $user_id)->get()
+    );
   }
 
   public function addToCart(Request $request)
@@ -34,7 +34,7 @@ class CartController extends Controller
       'user_id' => $request['id']
     ]);
 
-    return response(compact('cart'));
+    return response(new CartResource($cart), 201);
   }
 
   public function updateCart(Request $request)
