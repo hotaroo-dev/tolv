@@ -2,9 +2,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./public/tolv-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./public/tolv.svg" />
-    <img width="120" src="./public/tolv-dark.svg" alt="tolv logo" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/hotaroo-dev/tolv/raw/master/public/tolv-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/hotaroo-dev/tolv/raw/master/public/tolv.svg" />
+    <img width="120" src="https://github.com/hotaroo-dev/tolv/raw/master/public/tolv-dark.svg" alt="tolv logo" />
   </picture>
 </p>
 
